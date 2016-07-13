@@ -1,5 +1,4 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "706F4A4526C7FD0BAC2C817B23C8DB0034CAEA13",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
@@ -9,12 +8,12 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2C4ABEDB-744D-48BB-B97D-A9FFD8F2BB78",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "706F4A4526C7FD0BAC2C817B23C8DB0034CAEA13" : "LHLAssignments\/",
-    "F2800A697EB7AE359E57277ABC73C9A16534F343" : ""
+    "706F4A4526C7FD0BAC2C817B23C8DB0034CAEA13" : "..",
+    "F2800A697EB7AE359E57277ABC73C9A16534F343" : "..\/.."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "InstaKilo",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "W3D3\/InstaKilo\/InstaKilo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "InstaKilo.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thomasMinshull\/2PlayerMath.git",

@@ -1,5 +1,5 @@
 //
-//  MemesCollectionViewController.h
+//  rootCollectionViewController.h
 //  InstaKilo
 //
 //  Created by thomas minshull on 2016-07-13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MemesCollectionViewController : UICollectionViewController
-
-
+@interface rootCollectionViewController : UICollectionViewController
 
 @end

@@ -11,9 +11,11 @@
 
 @interface Meme : NSObject
 
-@property (copy, nonatomic) NSString *memeName;
+@property (strong, nonatomic) NSString *memeName;
 @property (strong, nonatomic, readonly) UIImage *image;
-@property (copy, nonatomic) NSString *location;
+@property (strong, nonatomic) NSString *location;
+@property (strong, nonatomic) NSString *subject;
 
+- (instancetype)initWithName:(NSString *)string;
 
 @end

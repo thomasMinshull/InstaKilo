@@ -12,8 +12,9 @@
 		55F986E91D36BCC60029C9A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F986E71D36BCC60029C9A3 /* Main.storyboard */; };
 		55F986EB1D36BCC60029C9A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F986EA1D36BCC60029C9A3 /* Assets.xcassets */; };
 		55F986EE1D36BCC60029C9A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F986EC1D36BCC60029C9A3 /* LaunchScreen.storyboard */; };
-		55F986F71D36BFEF0029C9A3 /* MemesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F986F61D36BFEF0029C9A3 /* MemesCollectionViewController.m */; };
 		55F986FA1D36C0610029C9A3 /* Meme.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F986F91D36C0610029C9A3 /* Meme.m */; };
+		55F986FD1D36D2F20029C9A3 /* rootCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F986FC1D36D2F20029C9A3 /* rootCollectionViewController.m */; };
+		55F987001D36D6A10029C9A3 /* MemeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 55F986FF1D36D6A10029C9A3 /* MemeDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +26,12 @@
 		55F986EA1D36BCC60029C9A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55F986ED1D36BCC60029C9A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55F986EF1D36BCC60029C9A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55F986F51D36BFEF0029C9A3 /* MemesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemesCollectionViewController.h; sourceTree = "<group>"; };
-		55F986F61D36BFEF0029C9A3 /* MemesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemesCollectionViewController.m; sourceTree = "<group>"; };
 		55F986F81D36C0610029C9A3 /* Meme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meme.h; sourceTree = "<group>"; };
 		55F986F91D36C0610029C9A3 /* Meme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meme.m; sourceTree = "<group>"; };
+		55F986FB1D36D2F20029C9A3 /* rootCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rootCollectionViewController.h; sourceTree = "<group>"; };
+		55F986FC1D36D2F20029C9A3 /* rootCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rootCollectionViewController.m; sourceTree = "<group>"; };
+		55F986FE1D36D6A10029C9A3 /* MemeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemeDataSource.h; path = ../MemeDataSource.h; sourceTree = "<group>"; };
+		55F986FF1D36D6A10029C9A3 /* MemeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MemeDataSource.m; path = ../MemeDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +67,12 @@
 				55F986E11D36BCC60029C9A3 /* AppDelegate.h */,
 				55F986E21D36BCC60029C9A3 /* AppDelegate.m */,
 				55F986E71D36BCC60029C9A3 /* Main.storyboard */,
+				55F986FB1D36D2F20029C9A3 /* rootCollectionViewController.h */,
+				55F986FC1D36D2F20029C9A3 /* rootCollectionViewController.m */,
 				55F986F81D36C0610029C9A3 /* Meme.h */,
 				55F986F91D36C0610029C9A3 /* Meme.m */,
-				55F986F51D36BFEF0029C9A3 /* MemesCollectionViewController.h */,
-				55F986F61D36BFEF0029C9A3 /* MemesCollectionViewController.m */,
+				55F986FE1D36D6A10029C9A3 /* MemeDataSource.h */,
+				55F986FF1D36D6A10029C9A3 /* MemeDataSource.m */,
 				55F986EA1D36BCC60029C9A3 /* Assets.xcassets */,
 				55F986EC1D36BCC60029C9A3 /* LaunchScreen.storyboard */,
 				55F986EF1D36BCC60029C9A3 /* Info.plist */,
@@ -154,10 +159,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55F986F71D36BFEF0029C9A3 /* MemesCollectionViewController.m in Sources */,
+				55F986FD1D36D2F20029C9A3 /* rootCollectionViewController.m in Sources */,
 				55F986FA1D36C0610029C9A3 /* Meme.m in Sources */,
 				55F986E31D36BCC60029C9A3 /* AppDelegate.m in Sources */,
 				55F986E01D36BCC60029C9A3 /* main.m in Sources */,
+				55F987001D36D6A10029C9A3 /* MemeDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
