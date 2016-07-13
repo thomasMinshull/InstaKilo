@@ -25,6 +25,8 @@ static NSString * const reuseIdentifier = @"Cell";
     // outsourcing the dataSource
     self.model = [[MemeDataSource alloc] init];
     
+    self.collectionView.dataSource = self.model;
+    
     // Uncomment the following line to preserve selection between presentations
      self.clearsSelectionOnViewWillAppear = NO;
 
@@ -48,22 +50,19 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
+// NOT USED, Refactored to DataSource Object
     return 0;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
+// NOT USED, Refactored to DataSource Object
     return 0;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell
-    
-    return cell;
+    // NOT USED, Refactored to DataSource Object
+    return nil;
 }
 
 #pragma mark <UICollectionViewDelegate>

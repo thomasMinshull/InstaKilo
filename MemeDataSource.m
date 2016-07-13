@@ -8,6 +8,7 @@
 
 #import "MemeDataSource.h"
 #import "Meme.h"
+#import "MemeCollectionViewCell.h"
 
 @interface MemeDataSource ()
 
@@ -31,6 +32,26 @@
         
         for (NSString *name in self.memeNames) {
             Meme *meme = [[Meme alloc] initWithName:name];
+            
+            int rand = arc4random();
+            if (rand%3 == 0 ) {
+                meme.location = @"Vancouver";
+            } else if (rand%2 ==0) {
+                meme.location = @"Boston";
+            } else {
+                meme.location = @"Seattle";
+            }
+            
+            int rand2 = arc4random();
+            if (rand2%3 == 0 ) {
+                meme.subject = @"Funny";
+            } else if (rand2%2 ==0) {
+                meme.subject = @"Mean";
+            } else {
+                meme.subject = @"Borring";
+            }
+            
+            
             [self.allMemes addObject:meme];
         }
         
@@ -82,4 +103,28 @@
     }
 
 }
+
+#pragma mark <UICollectionViewDataSource>
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return [self.currentModel count];
+}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.currentModel[section] count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *reuseIdentifier = @"cell";
+    
+    MemeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell
+    [cell setUpWithMeme:self.currentModel[indexPath.section][indexPath.row]];
+    
+    return cell;
+}
+
+
 @end
