@@ -11,7 +11,7 @@
 
 @interface rootCollectionViewController ()
 
-@property (strong, nonatomic) MemeDataSource *model;
+@property (strong, nonatomic) MemeDataSource *dataSource;
 
 @end
 
@@ -23,47 +23,27 @@ static NSString * const reuseIdentifier = @"Cell";
     [super viewDidLoad];
     
     // outsourcing the dataSource
-    self.model = [[MemeDataSource alloc] init];
+    self.dataSource = [[MemeDataSource alloc] init];
     
-    self.collectionView.dataSource = self.model;
+    self.collectionView.dataSource = self.dataSource;
     
-    // Uncomment the following line to preserve selection between presentations
-     self.clearsSelectionOnViewWillAppear = NO;
+    // add Segmented controller 
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark -Actions
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-#pragma mark <UICollectionViewDataSource>
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-// NOT USED, Refactored to DataSource Object
-    return 0;
+- (IBAction)segmentedControllerTapped:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        [self.dataSource changeModelCategory:MemeCategoryLocation];
+    } else {
+        [self.dataSource changeModelCategory:MemeCategorySubject];
+    }
+    [self.collectionView reloadData];
 }
 
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-// NOT USED, Refactored to DataSource Object
-    return 0;
-}
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    // NOT USED, Refactored to DataSource Object
-    return nil;
-}
 
 #pragma mark <UICollectionViewDelegate>
 

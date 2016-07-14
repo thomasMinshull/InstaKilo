@@ -9,6 +9,7 @@
 #import "MemeDataSource.h"
 #import "Meme.h"
 #import "MemeCollectionViewCell.h"
+#import "HeaderCollectionReusableView.h"
 
 @interface MemeDataSource ()
 
@@ -16,7 +17,6 @@
 @property (strong, nonatomic) NSArray *memeNames;
 @property (strong, nonatomic) NSMutableArray<Meme *> *allMemes;
 @property (strong, nonatomic) NSMutableArray<NSMutableArray *> *currentModel;
-//@property (strong, nonatomic) NSMutableArray *currentModelsSections;
 
 @end
 
@@ -64,6 +64,7 @@
     self.currentModel = [@[] mutableCopy];
 
     if (category == MemeCategoryLocation) {
+        
         //Sort Array
         NSSortDescriptor *locationDescriptor = [[NSSortDescriptor alloc] initWithKey:@"location" ascending:YES];
         [self.allMemes sortUsingDescriptors:@[locationDescriptor]];
@@ -81,7 +82,9 @@
                 [thisSection addObject:self.allMemes[i]];
             }
         }
+        self.currentCategory = category;
     } else {
+        
         //Sort Array
         NSSortDescriptor *subjectDescriptor = [[NSSortDescriptor alloc] initWithKey:@"subject" ascending:YES];
         [self.allMemes sortUsingDescriptors:@[subjectDescriptor]];
@@ -101,7 +104,7 @@
         }
 
     }
-
+    self.currentCategory = category;
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -126,5 +129,23 @@
     return cell;
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        HeaderCollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                                                  withReuseIdentifier:@"header"
+                                                                                         forIndexPath:indexPath];
+        if (self.currentCategory == MemeCategoryLocation) {
+            [header.headerLabel setText:[(Meme *)self.currentModel[indexPath.section][indexPath.row] location]];
+        } else {
+            [header.headerLabel setText:[(Meme *)self.currentModel[indexPath.section][indexPath.row] subject]];
+        }
+        
+        
+        return header;
+    } else {
+        return nil;
+    }
+}
 
 @end
